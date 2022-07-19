@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h1>Личная страница пользователя {{ account.get_full_name|default:account.username }}</h1>
+    <hr style="border: solid; color: dark">
+        <div style="display: flex;">
+            {% if account.image %}
+                    <img style="width: 40%" src="{{ account.image.url }}" alt="">
+            {% else %}
+                    <img style="width: 40%" src="{% static 'pics/default.jpg' %}" alt="">
+            {% endif %}
+            <div style="margin: 20px 0 0 50px;">
+                <p id="account_id" class="d-none">{{ account.pk }}</p>
+                <p style="font-weight: bold">Имя пользователя: {{ account.username }}</p>
+                <p style="font-weight: bold">Имя: {{ account.first_name }}</p>
+                <p style="font-weight: bold">Фамилия: {{ account.last_name }}</p>
+                <p style="font-weight: bold">Email: {{ account.email }}</p>
+                <p style="font-weight: bold">Телефон: {{ account.phone }}</p>
+                <p style="font-weight: bold">Карма: {{ account.karma }}</p>
+                <p style="font-weight: bold">Посты: <span id="posts_total">{{ account.posts_total }}</span></p>
+                <div>
+                    {% if account.pk == request.user.pk %}
+                        <a class="btn btn-primary" href="{% url 'profile_update' account.pk %}">Редактировать</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <hr style="border: solid">
+    <div style="margin: 20px 0 0 0">
+        {% if account.pk == request.user.pk %}
+                {% include 'post/list.html' with posts=account.posts.all%}
+        {% endif %}
+            </div>
+    </div>
+{% endblock %}

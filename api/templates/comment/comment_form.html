@@ -1,0 +1,4 @@
+{% csrf_token %}
+<textarea class="form-control" style="height: 40px" name="comment_text" id="comment_text"
+        aria-describedby="text">{{ form.comment_text.value|default:'' }}</textarea>
+<button class="btn btn-outline-success" data-post-id="{{ post.pk }}" type="submit">Комментировать</button>

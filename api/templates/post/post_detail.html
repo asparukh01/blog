@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <p id="post_id" class="d-none">{{ post.pk }}</p>
+        <h1>{{ post.title }}</h1>
+        <div style="display: flex;">
+            {% if post.image %}
+                <img style="width: 40%" src="{{ post.image.url }}" alt="">
+            {% else %}
+                <img style="width: 40%" src="{% static 'pics/default.jpg' %}" alt="">
+            {% endif %}
+            <div style="margin: 20px 0 0 50px;">
+                <p style="font-weight: bold">Статус: {{ post.status }}</p>
+                <p style="font-weight: bold">Автор: {{ post.author }}</p>
+                <p style="font-weight: bold">Дата создания: {{ post.created_at }}</p>
+                <p style="font-weight: bold">Ссылка: {{ post.link }}</p>
+                <p style="font-weight: bold">Дата публикации: <span id="publicated_at">{{ post.publicated_at }}</span></p>
+                <p style="font-weight: bold">Категория: {{ post.category }}</p>
+                <p style="font-weight: bold">Описание: {{ post.text }}</p>
+                <div>
+                    {% if request.user.id == post.author.id %}
+                        <a class="btn btn-primary" href="{% url 'post_update' post.pk %}">Редактировать</a>
+                        <button data-bs-toggle="modal" id="delete_post" data-bs-target="#exampleModal" class="btn btn-danger"
+                                href="{% url 'post_delete' post.pk %}">Удалить
+                        </button>
+                        {% include 'post/post_delete.html' with deleted_object=post %}
+                        {% if post.status == "Опубликован" %}
+                            <a hidden class="btn btn-success" id="publication">Опубликовать</a>
+                            <a class="btn btn-success" id="unpublication">Скрыть</a>
+                        {% else %}
+                            <a class="btn btn-success" id="publication">Опубликовать</a>
+                            <a hidden class="btn btn-success" id="unpublication">Скрыть</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div style="margin-top: 30px">
+                {% if request.user.is_authenticated %}
+                    {% if post.rating == 0 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                    {% elif post.rating == 1 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                    {% elif post.rating == 2 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                    {% elif post.rating == 3 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                    {% elif post.rating == 4 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/white.png' %}" alt=""></a>
+                    {% elif post.rating == 5 %}
+                        <a id="one" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="two" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="three" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="four" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                        <a id="five" href="#"><img style="width: 50px; height: 50px" src="{% static 'pics/red.png' %}" alt=""></a>
+                    {% endif %}
+                {%  endif %}
+                </div>
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="card-body">
+            <div>
+                <form action="{% url 'comment_create' post.pk %}" id="comment_form" method="POST" style="display: flex;">
+                    {% include 'comment/comment_form.html' %}
+                </form>
+            </div>
+            {% include 'comment/comment_list.html' with comments=post.comments.all %}
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}
+{% block js_block %}
+    <script src="{% static 'js/posts/post_delete.js' %}"></script>
+    <script src="{% static 'js/comment/comment_create.js' %}"></script>
+    <script src="{% static 'js/comment/comment_delete.js' %}"></script>
+    <script src="{% static 'js/posts/post_publication.js' %}"></script>
+    <script src="{% static 'js/posts/post_rating.js' %}"></script>
+{% endblock %}

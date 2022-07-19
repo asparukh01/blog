@@ -1,0 +1,38 @@
+<div class="container">
+<div class="mb-3">
+    <label for="first_name" class="form-label {% if form.first_name.errors %}is-invalid{% endif %}">
+        Имя
+    </label>
+    <input type="text" id="first_name" name="first_name" value="{{ form.first_name.value|default:'' }}" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="last_name" class="form-label {% if form.last_name.errors %}is-invalid{% endif %}">
+        Фамилия
+    </label>
+    <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default:'' }}" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label {% if form.email.errors %}is-invalid{% endif %}">
+        Email
+    </label>
+    <input type="text" id="email" name="email" value="{{ form.email.value|default:'' }}" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="phone" class="form-label {% if form.phone.errors %}is-invalid{% endif %}">
+        Телефон
+    </label>
+    <input type="text" id="phone" name="phone" value="{{ form.phone.value|default:'' }}" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="karma" class="form-label {% if form.karma.errors %}is-invalid{% endif %}">
+        Карма
+    </label>
+    <input type="text" id="karma" name="karma" value="{{ form.karma.value|default:'' }}" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="image" class="form-label {% if form.image.errors %}is-invalid{% endif %}">
+        Фотография
+    </label>
+    <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+</div>
+</div>

@@ -1,0 +1,103 @@
+[
+{
+  "model": "webapp.post",
+  "pk": 1,
+  "fields": {
+    "is_deleted": false,
+    "title": "qazaq",
+    "link": "https://web.telegram.org/z/#-798793345",
+    "image": "post_pics/msg-536311874-21977.jpg",
+    "text": "The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.",
+    "category": 1,
+    "created_at": "2022-07-19T07:32:39.716Z",
+    "status": "Опубликован",
+    "rating": 0,
+    "author": [
+      "admin"
+    ],
+    "publicated_at": "2022-07-19T07:32:46.631Z"
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 2,
+  "fields": {
+    "is_deleted": false,
+    "title": "python",
+    "link": "https://web.telegram.org/z/#-798793345",
+    "image": "post_pics/default.jpg",
+    "text": "Исправлена раскладка клавиатуры с «арифметические операторы js chfdytybt»\r\nВ JavaScript выделяют следующие операторы сравнения: == (равенство), != (не равенство), === (строгое равенство), !== (строгое не равенство), > (больше), >= (больше или равно), < (меньше), <= (меньше или равно).// Сравнение чисел 5 > 10; // false 5 === 2 + 3; // true 7 < 2 * 3; // false 4 <= 4; // true+ 0 === -0; // true// сравнение булевых значений true > false; // true true == false; // false//",
+    "category": 1,
+    "created_at": "2022-07-19T07:36:45.392Z",
+    "status": "Опубликован",
+    "rating": 5,
+    "author": [
+      "admin"
+    ],
+    "publicated_at": "2022-07-19T07:36:53.415Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 1,
+  "fields": {
+    "is_deleted": false,
+    "post": 1,
+    "author": [
+      "admin"
+    ],
+    "comment_text": "Cool",
+    "created_at_comment": "2022-07-19T07:37:35.283Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "is_deleted": false,
+    "post": 1,
+    "author": [
+      "admin"
+    ],
+    "comment_text": "qaaz",
+    "created_at_comment": "2022-07-19T07:37:41.553Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "is_deleted": false,
+    "post": 2,
+    "author": [
+      "admin"
+    ],
+    "comment_text": "papapa",
+    "created_at_comment": "2022-07-19T07:37:52.355Z"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "is_deleted": false,
+    "title": "News"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "is_deleted": false,
+    "title": "Sport"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "is_deleted": false,
+    "title": "Car"
+  }
+}
+]

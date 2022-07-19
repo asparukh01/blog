@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block content %}
+
+    <div class="container d-flex">
+        {% for post in posts %}
+            <div class="card" style="width: 18rem; margin: 0 10px 20px 0">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+                {% else %}
+                    <img src="{% static 'pics/default.jpg' %}" class="card-img-top" alt="">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">Создан: {{ post.created_at }}</p>
+                    <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

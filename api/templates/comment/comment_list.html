@@ -1,0 +1,13 @@
+{% for comment in comments %}
+    <div style="justify-content: space-between">
+        <p class="d-none" id="comment_id">{{ comment.pk }}</p>
+        <p class="card-text"><span style="font-weight: bold">{{ comment.author }}</span></p>
+        <div style="display: flex">
+            <p style="margin: 0 10px 0 0" class="card-text">{{ comment.comment_text }}</p>
+        <form method="POST" action="{% url 'comment_delete' comment.pk %}">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit" value="" id="delete_comment">Удалить</button>
+        </form>
+        </div>
+    </div>
+{% endfor %}
