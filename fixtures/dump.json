@@ -4,18 +4,18 @@
   "pk": 1,
   "fields": {
     "is_deleted": false,
-    "title": "qazaq",
-    "link": "https://web.telegram.org/z/#-798793345",
-    "image": "post_pics/msg-536311874-21977.jpg",
-    "text": "The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.",
+    "title": "Двое заместителей акима Атырауской",
+    "link": "https://www.nur.kz/politics/appointments/1979633-dvoe-zamestiteley-akima-atyrauskoy-oblasti-popali-pod-sokraschenie/",
+    "image": "",
+    "text": "\"В целях оптимизации государственных служащих в аппарате акимов областей и городов республиканского значения, озвученных в послании главы государства от 16 марта 2022 года, сокращена предельная численность заместителей акима Атырауской области на 2 штатные единицы\", – говорится в сообщении пресс-службы акима Атырауской области.",
     "category": 1,
-    "created_at": "2022-07-19T07:32:39.716Z",
+    "created_at": "2022-07-21T17:28:21.180Z",
     "status": "Опубликован",
-    "rating": 0,
+    "rating": 5,
     "author": [
       "admin"
     ],
-    "publicated_at": "2022-07-19T07:32:46.631Z"
+    "publicated_at": "2022-07-21T17:28:31.320Z"
   }
 },
 {
@@ -23,18 +23,37 @@
   "pk": 2,
   "fields": {
     "is_deleted": false,
-    "title": "python",
-    "link": "https://web.telegram.org/z/#-798793345",
-    "image": "post_pics/default.jpg",
-    "text": "Исправлена раскладка клавиатуры с «арифметические операторы js chfdytybt»\r\nВ JavaScript выделяют следующие операторы сравнения: == (равенство), != (не равенство), === (строгое равенство), !== (строгое не равенство), > (больше), >= (больше или равно), < (меньше), <= (меньше или равно).// Сравнение чисел 5 > 10; // false 5 === 2 + 3; // true 7 < 2 * 3; // false 4 <= 4; // true+ 0 === -0; // true// сравнение булевых значений true > false; // true true == false; // false//",
+    "title": "Развертывание приложений Django",
+    "link": "https://www.nur.kz/politics/appointments/1979633-dvoe-zamestiteley-akima-atyrauskoy-oblasti-popali-pod-sokraschenie/",
+    "image": "",
+    "text": "После того, как мы закончили разработку веб-приложения, оно должно быть размещено на хосте, чтобы общественность могла получить доступ к нему из любого места. Мы посмотрим, как развернуть и разместить приложение на экземпляре AWS EC2, используя Nginx в качестве веб-сервера и Gunicorn в качестве WSGI.",
     "category": 1,
-    "created_at": "2022-07-19T07:36:45.392Z",
+    "created_at": "2022-07-21T17:29:10.709Z",
     "status": "Опубликован",
-    "rating": 5,
+    "rating": 3,
     "author": [
       "admin"
     ],
-    "publicated_at": "2022-07-19T07:36:53.415Z"
+    "publicated_at": "2022-07-21T17:31:51.568Z"
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 3,
+  "fields": {
+    "is_deleted": false,
+    "title": "Развертывание приложений Django",
+    "link": "https://www.nur.kz/politics/appointments/1979633-dvoe-zamestiteley-akima-atyrauskoy-oblasti-popali-pod-sokraschenie/",
+    "image": "",
+    "text": "После того, как мы закончили разработку веб-приложения, оно должно быть размещено на хосте, чтобы общественность могла получить доступ к нему из любого места. Мы посмотрим, как развернуть и разместить приложение на экземпляре AWS EC2, используя Nginx в качестве веб-сервера и Gunicorn в качестве WSGI.",
+    "category": 1,
+    "created_at": "2022-07-21T17:29:40.202Z",
+    "status": "Опубликован",
+    "rating": 0,
+    "author": [
+      "admin"
+    ],
+    "publicated_at": "2022-07-21T17:31:56.914Z"
   }
 },
 {
@@ -42,38 +61,25 @@
   "pk": 1,
   "fields": {
     "is_deleted": false,
-    "post": 1,
+    "post": 3,
     "author": [
       "admin"
     ],
-    "comment_text": "Cool",
-    "created_at_comment": "2022-07-19T07:37:35.283Z"
+    "comment_text": "qazaq",
+    "created_at_comment": "2022-07-21T17:33:21.115Z"
   }
 },
 {
   "model": "webapp.comment",
   "pk": 2,
-  "fields": {
-    "is_deleted": false,
-    "post": 1,
-    "author": [
-      "admin"
-    ],
-    "comment_text": "qaaz",
-    "created_at_comment": "2022-07-19T07:37:41.553Z"
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 3,
   "fields": {
     "is_deleted": false,
     "post": 2,
     "author": [
       "admin"
     ],
-    "comment_text": "papapa",
-    "created_at_comment": "2022-07-19T07:37:52.355Z"
+    "comment_text": "pop",
+    "created_at_comment": "2022-07-21T17:33:33.302Z"
   }
 },
 {
@@ -81,7 +87,7 @@
   "pk": 1,
   "fields": {
     "is_deleted": false,
-    "title": "News"
+    "title": "news"
   }
 },
 {
@@ -89,7 +95,7 @@
   "pk": 2,
   "fields": {
     "is_deleted": false,
-    "title": "Sport"
+    "title": "sport"
   }
 },
 {
@@ -97,7 +103,7 @@
   "pk": 3,
   "fields": {
     "is_deleted": false,
-    "title": "Car"
+    "title": "car"
   }
 }
 ]
