@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}
+Список пользователей
+{% endblock %}
 {% block content %}
     <div class="container">
         {% for account in accounts %}
@@ -9,7 +11,7 @@
                     {% if account.image %}
                             <img style="height: 100px;" src="{{ account.image.url }}">
                     {% else %}
-                            <img style="width: 40%" src="{% static 'pics/default.jpg' %}" alt="">
+                            <img style="width: 200px" src="{% static 'pics/default.jpg' %}" alt="">
                     {% endif %}
                 </div>
                 <div class="card d-flex form-control">

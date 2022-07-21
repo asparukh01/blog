@@ -6,7 +6,7 @@
     <form action="{% url 'profile_update' request.user.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% include 'partials/account/account_form.html' %}
-        <input type="submit" value="Изменить" class="btn btn-success">
+        <input id="button_update" type="submit" value="Изменить" class="btn btn-success">
     </form>
     </div>
 

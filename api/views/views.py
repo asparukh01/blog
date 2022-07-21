@@ -22,8 +22,9 @@ class PostCreateApiView(APIView):
 
 class PostUpdateApiView(APIView):
     def patch(self, request, *args, **kwargs):
-        objects = get_object_or_404(Post, pk=kwargs.get('pk'))
-        serializer = PostSerializer(objects, data=request.data)
+        object_id = get_object_or_404(Post, pk=kwargs.get('pk'))
+        serializer = PostSerializer(object_id, data=request.data)
+
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

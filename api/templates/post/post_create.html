@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+Создание статьи
+{% endblock %}
 {% block content %}
     <div class="container" style="width: 600px; margin-top: 20px;">
         <form action="{% url 'post_create' %}" method="post" id="post_form" enctype="multipart/form-data">

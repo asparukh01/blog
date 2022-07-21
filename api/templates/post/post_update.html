@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}
+Редактирование статьи
+{% endblock %}
 {% block content %}
     <div class="container">
     <h1>Редактирование объявлении</h1>
@@ -20,4 +22,7 @@
         </div>
     </form>
     </div>
+{% endblock %}
+{% block js_block %}
+    <script src="{%  static 'js/posts/post_update.js' %}"></script>
 {% endblock %}

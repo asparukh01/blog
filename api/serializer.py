@@ -5,14 +5,12 @@ from webapp.models import Post, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Post
         fields = ['title', 'link', 'text', 'category', 'status']
 
 
 class CommentSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Comment
         fields = ['comment_text']

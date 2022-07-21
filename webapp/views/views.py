@@ -3,14 +3,29 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from ..forms import PostForm
 from ..models import Post, Category
+from django.core.paginator import Paginator
 
 
 class PostListView(View):
     template_name = 'post/post_list.html'
 
     def get(self, request, *args, **kwargs):
-        posts = Post.objects.all()
-        return render(request, self.template_name, {'posts': posts})
+        posts = Post.objects.filter(status='Опубликован').order_by('-created_at')
+        paginator = Paginator(posts, 12)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, self.template_name, {'page_obj': page_obj})
+
+
+class PostHotListView(LoginRequiredMixin, View):
+    template_name = 'post/hot_list.html'
+
+    def get(self, request, *args, **kwargs):
+        posts = Post.objects.filter(status='Опубликован').order_by('-rating')
+        paginator = Paginator(posts, 12)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, self.template_name, {'page_obj': page_obj})
 
 
 class PostCreateView(LoginRequiredMixin, View):
